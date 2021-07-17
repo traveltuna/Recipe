@@ -22,7 +22,7 @@
 		F17C92F026A2B14F00A88A98 /* RecipeGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92EF26A2B14F00A88A98 /* RecipeGridViewController.swift */; };
 		F17C92F226A2B16300A88A98 /* RecipeGrid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */; };
 		F17C92F726A2BCBE00A88A98 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F626A2BCBE00A88A98 /* Recipe.swift */; };
-		F17C92FA26A2BEA200A88A98 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */; };
+		F17C92FA26A2BEA200A88A98 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F926A2BEA200A88A98 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		F17C92EF26A2B14F00A88A98 /* RecipeGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeGridViewController.swift; sourceTree = "<group>"; };
 		F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeGrid.storyboard; sourceTree = "<group>"; };
 		F17C92F626A2BCBE00A88A98 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
-		F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
+		F17C92F926A2BEA200A88A98 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 		F17C92F826A2BE8900A88A98 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */,
+				F17C92F926A2BEA200A88A98 /* DataManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -260,7 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F17C92EE26A2959900A88A98 /* TabViewController.swift in Sources */,
-				F17C92FA26A2BEA200A88A98 /* RecipeViewModel.swift in Sources */,
+				F17C92FA26A2BEA200A88A98 /* DataManager.swift in Sources */,
 				F118C26B26A275F800D95137 /* AppDelegate.swift in Sources */,
 				F17C92E826A28CDE00A88A98 /* RecipeCollectionViewCell.swift in Sources */,
 				F118C26D26A275F800D95137 /* SceneDelegate.swift in Sources */,

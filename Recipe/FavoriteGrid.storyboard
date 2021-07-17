@@ -57,10 +57,6 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="0TW-aC-sj0"/>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="xWW-hw-w6F"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -77,7 +73,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="pHG-jT-Ztu" id="Xzd-Lg-poD"/>
-                        <outlet property="header" destination="3Fe-ue-jKv" id="O3l-gF-tz3"/>
+                        <outlet property="countLabel" destination="Do4-mI-VSx" id="26A-h0-bld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

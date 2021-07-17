@@ -6,22 +6,26 @@
 //
 
 import SDWebImage
+import RxCocoa
+import RxSwift
 import UIKit
 
 final class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var likeButton: UIButton!
+    private var disposeBag = DisposeBag()
     
     override func prepareForReuse() {
         super.prepareForReuse()
         thumbnailImageView.image = nil
+        disposeBag = DisposeBag()
     }
     
-    func configureCell(with recipe: Recipe) {
-        configureTitleLabel(with: recipe.attributes.title, lineHeightMultiple: 1.5)
-        titleLabel.text = recipe.attributes.title
-        thumbnailImageView.sd_setImage(with: URL(string: recipe.attributes.thumbnailURL)) { [weak self] image, error, _, _ in
+    func configureCell(with recipe: RecipeViewModel, showLikeButton: Bool) {
+        configureTitleLabel(with: recipe.title, lineHeightMultiple: 1.5)
+        titleLabel.text = recipe.title
+        thumbnailImageView.sd_setImage(with: URL(string: recipe.thumbnailURL)) { [weak self] image, error, _, _ in
             if error != nil {
                 // TODO: add placeholder image
                 self?.thumbnailImageView.image = UIImage(named: "placeholder")
@@ -30,9 +34,19 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
             }
         }
         
-        let tintedImage = UIImage(named: "like")?.withRenderingMode(.alwaysTemplate)
-        likeButton.setImage(tintedImage, for: .normal)
-        likeButton.tintColor = .red
+        if showLikeButton {
+            let tintedImage = (recipe.isFavorite ? UIImage(named: "likeSolid") : UIImage(named: "like"))?.withRenderingMode(.alwaysTemplate)
+            likeButton.setImage(tintedImage, for: .normal)
+            likeButton.tintColor = .red
+        } else {
+            likeButton.isHidden = true
+        }
+//        
+//        likeButton.rx.tap
+//            .subscribe { [weak self] _ in
+//                
+//            }
+//            .disposed(by: disposeBag)
     }
 }
 
