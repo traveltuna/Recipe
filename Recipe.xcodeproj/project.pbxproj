@@ -3,17 +3,26 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9069CBB403493BAE3FB13432 /* Pods_Recipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8F6A03D41BA0D5B20696266 /* Pods_Recipe.framework */; };
 		F118C26B26A275F800D95137 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118C26A26A275F800D95137 /* AppDelegate.swift */; };
 		F118C26D26A275F800D95137 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118C26C26A275F800D95137 /* SceneDelegate.swift */; };
-		F118C26F26A275F800D95137 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F118C26E26A275F800D95137 /* ViewController.swift */; };
 		F118C27226A275F800D95137 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F118C27026A275F800D95137 /* Main.storyboard */; };
 		F118C27426A275F900D95137 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F118C27326A275F900D95137 /* Assets.xcassets */; };
 		F118C27726A275F900D95137 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F118C27526A275F900D95137 /* LaunchScreen.storyboard */; };
+		F17C92E326A2892100A88A98 /* FavoriteGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92E226A2892100A88A98 /* FavoriteGridViewController.swift */; };
+		F17C92E526A28ACF00A88A98 /* FavoriteGrid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C92E426A28ACF00A88A98 /* FavoriteGrid.storyboard */; };
+		F17C92E826A28CDE00A88A98 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92E626A28CDE00A88A98 /* RecipeCollectionViewCell.swift */; };
+		F17C92E926A28CDE00A88A98 /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F17C92E726A28CDE00A88A98 /* RecipeCollectionViewCell.xib */; };
+		F17C92EC26A28F7D00A88A98 /* ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92EB26A28F7D00A88A98 /* ClassName.swift */; };
+		F17C92EE26A2959900A88A98 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92ED26A2959900A88A98 /* TabViewController.swift */; };
+		F17C92F026A2B14F00A88A98 /* RecipeGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92EF26A2B14F00A88A98 /* RecipeGridViewController.swift */; };
+		F17C92F226A2B16300A88A98 /* RecipeGrid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */; };
+		F17C92F726A2BCBE00A88A98 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F626A2BCBE00A88A98 /* Recipe.swift */; };
+		F17C92FA26A2BEA200A88A98 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +32,20 @@
 		F118C26726A275F800D95137 /* Recipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F118C26A26A275F800D95137 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F118C26C26A275F800D95137 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F118C26E26A275F800D95137 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F118C27126A275F800D95137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F118C27326A275F900D95137 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F118C27626A275F900D95137 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F118C27826A275F900D95137 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F17C92E226A2892100A88A98 /* FavoriteGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteGridViewController.swift; sourceTree = "<group>"; };
+		F17C92E426A28ACF00A88A98 /* FavoriteGrid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteGrid.storyboard; sourceTree = "<group>"; };
+		F17C92E626A28CDE00A88A98 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		F17C92E726A28CDE00A88A98 /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
+		F17C92EB26A28F7D00A88A98 /* ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassName.swift; sourceTree = "<group>"; };
+		F17C92ED26A2959900A88A98 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		F17C92EF26A2B14F00A88A98 /* RecipeGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeGridViewController.swift; sourceTree = "<group>"; };
+		F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeGrid.storyboard; sourceTree = "<group>"; };
+		F17C92F626A2BCBE00A88A98 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +66,6 @@
 				502CE0C03DBFAE7861D2931B /* Pods-Recipe.debug.xcconfig */,
 				2B70035B9F5A92B906E16DBD /* Pods-Recipe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +98,48 @@
 		F118C26926A275F800D95137 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
+				F17C92F526A2BCB100A88A98 /* Model */,
+				F17C92F826A2BE8900A88A98 /* ViewModel */,
+				F17C92EA26A28EB500A88A98 /* Extension */,
 				F118C26A26A275F800D95137 /* AppDelegate.swift */,
+				F17C92ED26A2959900A88A98 /* TabViewController.swift */,
+				F17C92EF26A2B14F00A88A98 /* RecipeGridViewController.swift */,
+				F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */,
+				F17C92E226A2892100A88A98 /* FavoriteGridViewController.swift */,
+				F17C92E426A28ACF00A88A98 /* FavoriteGrid.storyboard */,
+				F17C92E626A28CDE00A88A98 /* RecipeCollectionViewCell.swift */,
+				F17C92E726A28CDE00A88A98 /* RecipeCollectionViewCell.xib */,
 				F118C26C26A275F800D95137 /* SceneDelegate.swift */,
-				F118C26E26A275F800D95137 /* ViewController.swift */,
 				F118C27026A275F800D95137 /* Main.storyboard */,
 				F118C27326A275F900D95137 /* Assets.xcassets */,
 				F118C27526A275F900D95137 /* LaunchScreen.storyboard */,
 				F118C27826A275F900D95137 /* Info.plist */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		F17C92EA26A28EB500A88A98 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F17C92EB26A28F7D00A88A98 /* ClassName.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F17C92F526A2BCB100A88A98 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F17C92F626A2BCBE00A88A98 /* Recipe.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F17C92F826A2BE8900A88A98 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F17C92F926A2BEA200A88A98 /* RecipeViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,8 +201,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F17C92F226A2B16300A88A98 /* RecipeGrid.storyboard in Resources */,
+				F17C92E926A28CDE00A88A98 /* RecipeCollectionViewCell.xib in Resources */,
 				F118C27726A275F900D95137 /* LaunchScreen.storyboard in Resources */,
 				F118C27426A275F900D95137 /* Assets.xcassets in Resources */,
+				F17C92E526A28ACF00A88A98 /* FavoriteGrid.storyboard in Resources */,
 				F118C27226A275F800D95137 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,9 +259,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F118C26F26A275F800D95137 /* ViewController.swift in Sources */,
+				F17C92EE26A2959900A88A98 /* TabViewController.swift in Sources */,
+				F17C92FA26A2BEA200A88A98 /* RecipeViewModel.swift in Sources */,
 				F118C26B26A275F800D95137 /* AppDelegate.swift in Sources */,
+				F17C92E826A28CDE00A88A98 /* RecipeCollectionViewCell.swift in Sources */,
 				F118C26D26A275F800D95137 /* SceneDelegate.swift in Sources */,
+				F17C92F026A2B14F00A88A98 /* RecipeGridViewController.swift in Sources */,
+				F17C92E326A2892100A88A98 /* FavoriteGridViewController.swift in Sources */,
+				F17C92EC26A28F7D00A88A98 /* ClassName.swift in Sources */,
+				F17C92F726A2BCBE00A88A98 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
