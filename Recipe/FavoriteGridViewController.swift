@@ -24,7 +24,7 @@ final class FavoriteGridViewController: UIViewController {
             
         }
     )
-    private let disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
     static func instance() -> FavoriteGridViewController {
         let storyboard = UIStoryboard(name: "FavoriteGrid", bundle: nil)

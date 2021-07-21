@@ -29,11 +29,16 @@ extension RecipeSection: SectionModelType {
 final class RecipeGridViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     private let recipes = BehaviorRelay<[RecipeSection]>(value: [])
-    private let dataSource = RxCollectionViewSectionedReloadDataSource<RecipeSection>(
-        configureCell: { _, collectionView, indexPath, item in
+    private lazy var dataSource = RxCollectionViewSectionedReloadDataSource<RecipeSection>(
+        configureCell: { [weak self] _, collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecipeCollectionViewCell.identifier,
                                                           for: indexPath) as! RecipeCollectionViewCell
             cell.configureCell(with: item, showLikeButton: true)
+            cell.likeButton.rx.tap
+                .subscribe { [weak self] _ in
+                    self?.updateFavoriteStatus(index: indexPath.item)
+                }
+                .disposed(by: cell.disposeBag)
             return cell
             
         }
@@ -96,6 +101,27 @@ private extension RecipeGridViewController {
         layout.minimumLineSpacing = Constants.minimumLineSpacing
         layout.minimumInteritemSpacing = Constants.horizontalInset
         collectionView.collectionViewLayout = layout
+    }
+    
+    func updateFavoriteStatus(index: Int) {
+        guard var ar = recipes.value.first?.items else {
+            return
+        }
+        let newModel = RecipeViewModel(with: Recipe(id: ar[index].id,
+                                                    attributes: RecipeAttributes(title: ar[index].title,
+                                                                                 thumbnailURL: ar[index].thumbnailURL)),
+                                       isFavorite: !ar[index].isFavorite)
+        ar[index] = newModel
+        recipes.accept([RecipeSection(recipes: ar)])
+        DataManager.shared.updateFavoriteStatus(with: newModel)
+        let alert = UIAlertController(title: "お気に入り",
+                                      message: newModel.isFavorite ? "追加しました" : "解除しました",
+                                      preferredStyle: .alert)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
 }
 

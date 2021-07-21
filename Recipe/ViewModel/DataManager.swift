@@ -45,4 +45,19 @@ final class DataManager {
         })
         task.resume()
     }
+    
+    func updateFavoriteStatus(with viewModel: RecipeViewModel) {
+        if viewModel.isFavorite {
+            // like the recipe
+            favoriteRecipes = favoriteRecipes.filter { $0.id != viewModel.id }
+            favoriteRecipes = [viewModel] + favoriteRecipes
+            favoriteRecipeIds = favoriteRecipes.map { $0.id }
+            favoriteDict[viewModel.id] = viewModel
+        } else {
+            // unlike the recipe
+            favoriteDict[viewModel.id] = nil
+            favoriteRecipes = favoriteRecipes.filter { $0.id != viewModel.id }
+            favoriteRecipeIds = favoriteRecipes.map { $0.id }
+        }
+    }
 }

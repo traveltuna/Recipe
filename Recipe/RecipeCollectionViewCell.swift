@@ -6,15 +6,14 @@
 //
 
 import SDWebImage
-import RxCocoa
 import RxSwift
 import UIKit
 
 final class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var likeButton: UIButton!
-    private var disposeBag = DisposeBag()
+    @IBOutlet weak var likeButton: UIButton!
+    var disposeBag = DisposeBag()
     
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -41,12 +40,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
         } else {
             likeButton.isHidden = true
         }
-//        
-//        likeButton.rx.tap
-//            .subscribe { [weak self] _ in
-//                
-//            }
-//            .disposed(by: disposeBag)
     }
 }
 
