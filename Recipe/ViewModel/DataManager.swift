@@ -10,7 +10,7 @@ import Foundation
 final class DataManager {
     static let shared = DataManager()
     var favoriteRecipes = [RecipeViewModel]()
-    var favoriteRecipeIds = ["baaec62c-2603-4269-ac0f-0e9ee7273401", "c1f916be-ce00-4fc8-928f-038320cff676"]
+    var favoriteRecipeIds = UserDefaults.standard.stringArray(forKey: UserDefaultsKeys.favoriteRecipeIds) ?? [String]()
     var favoriteDict = [String: RecipeViewModel]()
     
     func fetchRecipes(completionHandler: @escaping ([RecipeViewModel]?, Error?) -> Void) {
@@ -59,5 +59,10 @@ final class DataManager {
             favoriteRecipes = favoriteRecipes.filter { $0.id != viewModel.id }
             favoriteRecipeIds = favoriteRecipes.map { $0.id }
         }
+        UserDefaults.standard.setValue(favoriteRecipeIds, forKey: UserDefaultsKeys.favoriteRecipeIds)
+    }
+    
+    struct UserDefaultsKeys {
+        static let favoriteRecipeIds = "kFavoriteRecipeIds"
     }
 }

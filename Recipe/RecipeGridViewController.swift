@@ -87,8 +87,10 @@ private extension RecipeGridViewController {
         collectionView.rx.modelSelected(RecipeViewModel.self)
             .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [weak self] viewModel in
-                let vc = RecipeDetailsViewController.instance(with: viewModel) {
-                    
+                let vc = RecipeDetailsViewController.instance(with: viewModel) { [weak self] in
+                    if let index = self?.recipes.value.first?.items.firstIndex(where: { $0.id == viewModel.id }) {
+                        self?.updateFavoriteStatus(index: index, showAlert: false)
+                    }
                 }
                 DispatchQueue.main.async {
                     self?.navigationController?.pushViewController(vc, animated: true)
@@ -108,7 +110,7 @@ private extension RecipeGridViewController {
         collectionView.collectionViewLayout = layout
     }
     
-    func updateFavoriteStatus(index: Int) {
+    func updateFavoriteStatus(index: Int, showAlert: Bool = true) {
         guard var ar = recipes.value.first?.items else {
             return
         }
@@ -119,13 +121,15 @@ private extension RecipeGridViewController {
         ar[index] = newModel
         recipes.accept([RecipeSection(recipes: ar)])
         DataManager.shared.updateFavoriteStatus(with: newModel)
-        let alert = UIAlertController(title: "お気に入り",
-                                      message: newModel.isFavorite ? "追加しました" : "解除しました",
-                                      preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        alert.addAction(cancelAction)
-        DispatchQueue.main.async {
-            self.present(alert, animated: true, completion: nil)
+        if showAlert {
+            let alert = UIAlertController(title: "お気に入り",
+                                          message: newModel.isFavorite ? "追加しました" : "解除しました",
+                                          preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alert.addAction(cancelAction)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }
