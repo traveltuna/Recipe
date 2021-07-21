@@ -23,6 +23,8 @@
 		F17C92F226A2B16300A88A98 /* RecipeGrid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */; };
 		F17C92F726A2BCBE00A88A98 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F626A2BCBE00A88A98 /* Recipe.swift */; };
 		F17C92FA26A2BEA200A88A98 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17C92F926A2BEA200A88A98 /* DataManager.swift */; };
+		F1D30BA326A7BB5400152173 /* RecipeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D30BA226A7BB5400152173 /* RecipeDetailsViewController.swift */; };
+		F1D30BA526A7BB6500152173 /* RecipeDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1D30BA426A7BB6500152173 /* RecipeDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		F17C92F126A2B16300A88A98 /* RecipeGrid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeGrid.storyboard; sourceTree = "<group>"; };
 		F17C92F626A2BCBE00A88A98 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		F17C92F926A2BEA200A88A98 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		F1D30BA226A7BB5400152173 /* RecipeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailsViewController.swift; sourceTree = "<group>"; };
+		F1D30BA426A7BB6500152173 /* RecipeDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecipeDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				F17C92E426A28ACF00A88A98 /* FavoriteGrid.storyboard */,
 				F17C92E626A28CDE00A88A98 /* RecipeCollectionViewCell.swift */,
 				F17C92E726A28CDE00A88A98 /* RecipeCollectionViewCell.xib */,
+				F1D30BA226A7BB5400152173 /* RecipeDetailsViewController.swift */,
+				F1D30BA426A7BB6500152173 /* RecipeDetails.storyboard */,
 				F118C26C26A275F800D95137 /* SceneDelegate.swift */,
 				F118C27026A275F800D95137 /* Main.storyboard */,
 				F118C27326A275F900D95137 /* Assets.xcassets */,
@@ -201,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1D30BA526A7BB6500152173 /* RecipeDetails.storyboard in Resources */,
 				F17C92F226A2B16300A88A98 /* RecipeGrid.storyboard in Resources */,
 				F17C92E926A28CDE00A88A98 /* RecipeCollectionViewCell.xib in Resources */,
 				F118C27726A275F900D95137 /* LaunchScreen.storyboard in Resources */,
@@ -262,6 +269,7 @@
 				F17C92EE26A2959900A88A98 /* TabViewController.swift in Sources */,
 				F17C92FA26A2BEA200A88A98 /* DataManager.swift in Sources */,
 				F118C26B26A275F800D95137 /* AppDelegate.swift in Sources */,
+				F1D30BA326A7BB5400152173 /* RecipeDetailsViewController.swift in Sources */,
 				F17C92E826A28CDE00A88A98 /* RecipeCollectionViewCell.swift in Sources */,
 				F118C26D26A275F800D95137 /* SceneDelegate.swift in Sources */,
 				F17C92F026A2B14F00A88A98 /* RecipeGridViewController.swift in Sources */,

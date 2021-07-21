@@ -86,8 +86,13 @@ private extension RecipeGridViewController {
         recipes.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
         collectionView.rx.modelSelected(RecipeViewModel.self)
             .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { recipe in
-                // recipe is selected
+            .subscribe(onNext: { [weak self] viewModel in
+                let vc = RecipeDetailsViewController.instance(with: viewModel) {
+                    
+                }
+                DispatchQueue.main.async {
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }
             }).disposed(by: disposeBag)
 
         collectionView.register(UINib(nibName: RecipeCollectionViewCell.className, bundle: nil),
