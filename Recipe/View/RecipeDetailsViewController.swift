@@ -12,13 +12,14 @@ final class RecipeDetailsViewController: UIViewController {
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
     private var viewModel: RecipeViewModel!
-    private var onTap: () -> Void = {}
+    private var onTapFavoriteButton: () -> Void = {}
     
-    static func instance(with viewModel: RecipeViewModel, onTap: @escaping () -> Void) -> RecipeDetailsViewController {
+    static func instance(with viewModel: RecipeViewModel,
+                         onTap: @escaping () -> Void) -> RecipeDetailsViewController {
         let storyboard = UIStoryboard(name: "RecipeDetails", bundle: nil)
         let vc = storyboard.instantiateInitialViewController() as! RecipeDetailsViewController
         vc.viewModel = viewModel
-        vc.onTap = onTap
+        vc.onTapFavoriteButton = onTap
         return vc
     }
     
@@ -33,7 +34,6 @@ private extension RecipeDetailsViewController {
     func setupAppearance() {
         thumbnailImageView.sd_setImage(with: URL(string: viewModel.thumbnailURL)) { [weak self] image, error, _, _ in
             if error != nil {
-                // TODO: add placeholder image
                 self?.thumbnailImageView.image = UIImage(named: "placeholder")
             } else {
                 self?.thumbnailImageView.image = image
@@ -71,6 +71,6 @@ private extension RecipeDetailsViewController {
         DispatchQueue.main.async {
             self.present(alert, animated: true, completion: nil)
         }
-        onTap()
+        onTapFavoriteButton()
     }
 }

@@ -57,7 +57,7 @@ private extension FavoriteGridViewController {
     func setupCountLable() {
         recipes.asObservable().subscribe(onNext: { [weak self] vm in
             self?.countLabel.text = "お気に入り件数 \(vm.first?.items.count ?? 0)"
-            }).disposed(by: disposeBag)
+        }).disposed(by: disposeBag)
     }
     
     func setupCollectionView() {
@@ -88,6 +88,6 @@ extension FavoriteGridViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - Constants.horizontalInset * 3) / 2
-        return CGSize(width:width, height:width + Constants.titleHeight)
+        return CGSize(width: width, height: width + Constants.titleHeight)
     }
 }

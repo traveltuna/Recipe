@@ -36,7 +36,7 @@ final class RecipeGridViewController: UIViewController {
             cell.configureCell(with: item, showLikeButton: true)
             cell.likeButton.rx.tap
                 .subscribe { [weak self] _ in
-                    self?.updateFavoriteStatus(index: indexPath.item)
+                    self?.updateFavoriteStatus(with: indexPath.item)
                 }
                 .disposed(by: cell.disposeBag)
             return cell
@@ -89,7 +89,7 @@ private extension RecipeGridViewController {
             .subscribe(onNext: { [weak self] viewModel in
                 let vc = RecipeDetailsViewController.instance(with: viewModel) { [weak self] in
                     if let index = self?.recipes.value.first?.items.firstIndex(where: { $0.id == viewModel.id }) {
-                        self?.updateFavoriteStatus(index: index, showAlert: false)
+                        self?.updateFavoriteStatus(with: index, showAlert: false)
                     }
                 }
                 DispatchQueue.main.async {
@@ -110,7 +110,7 @@ private extension RecipeGridViewController {
         collectionView.collectionViewLayout = layout
     }
     
-    func updateFavoriteStatus(index: Int, showAlert: Bool = true) {
+    func updateFavoriteStatus(with index: Int, showAlert: Bool = true) {
         guard var ar = recipes.value.first?.items else {
             return
         }
@@ -145,6 +145,6 @@ extension RecipeGridViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - Constants.horizontalInset * 3) / 2
-        return CGSize(width:width, height:width + Constants.titleHeight)
+        return CGSize(width: width, height: width + Constants.titleHeight)
     }
 }

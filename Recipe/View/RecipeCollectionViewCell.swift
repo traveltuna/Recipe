@@ -5,8 +5,8 @@
 //  Created by Fangwei Hsu on 2021/07/17.
 //
 
-import SDWebImage
 import RxSwift
+import SDWebImage
 import UIKit
 
 final class RecipeCollectionViewCell: UICollectionViewCell {
@@ -26,7 +26,6 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
         titleLabel.text = recipe.title
         thumbnailImageView.sd_setImage(with: URL(string: recipe.thumbnailURL)) { [weak self] image, error, _, _ in
             if error != nil {
-                // TODO: add placeholder image
                 self?.thumbnailImageView.image = UIImage(named: "placeholder")
             } else {
                 self?.thumbnailImageView.image = image
@@ -34,6 +33,7 @@ final class RecipeCollectionViewCell: UICollectionViewCell {
         }
         
         if showLikeButton {
+            likeButton.isHidden = false
             let tintedImage = (recipe.isFavorite ? UIImage(named: "likeSolid") : UIImage(named: "like"))?.withRenderingMode(.alwaysTemplate)
             likeButton.setImage(tintedImage, for: .normal)
             likeButton.tintColor = .red

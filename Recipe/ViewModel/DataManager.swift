@@ -7,6 +7,20 @@
 
 import Foundation
 
+struct RecipeViewModel {
+    let id: String
+    let title: String
+    let thumbnailURL: String
+    let isFavorite: Bool
+    
+    init(with recipe: Recipe, isFavorite: Bool) {
+        self.id = recipe.id
+        self.title = recipe.attributes.title
+        self.thumbnailURL = recipe.attributes.thumbnailURL
+        self.isFavorite = isFavorite
+    }
+}
+
 final class DataManager {
     static let shared = DataManager()
     var favoriteRecipes = [RecipeViewModel]()
