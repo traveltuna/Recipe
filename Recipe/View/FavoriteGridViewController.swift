@@ -63,12 +63,6 @@ private extension FavoriteGridViewController {
     func setupCollectionView() {
         collectionView.delegate = self
         recipes.bind(to: collectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-        collectionView.rx.modelSelected(RecipeViewModel.self)
-            .throttle(.seconds(1), latest: false, scheduler: MainScheduler.instance)
-            .subscribe(onNext: { recipe in
-                // recipe is selected
-            }).disposed(by: disposeBag)
-
         collectionView.register(UINib(nibName: RecipeCollectionViewCell.className, bundle: nil),
                                 forCellWithReuseIdentifier: RecipeCollectionViewCell.identifier)
         setupCollectionViewLayout()
